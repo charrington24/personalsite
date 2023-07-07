@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-ts-typewriter": "^0.1.8-b",
+    "typewriter-effect": "^2.20.1"
+  }
+}
