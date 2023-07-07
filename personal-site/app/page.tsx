@@ -1,19 +1,17 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Popup from './components/Popup';
 
-import localFont from 'next/font/local'
 import Typewriter from 'react-ts-typewriter';
-
-// Font files can be colocated inside of `app`
-const digit2000 = localFont({
-  src: 'fonts/01_Digit2000.otf',
-  display: 'swap',
-})
+import { digit2000 } from "./fonts/fonts";
+// import { setTimeout } from "timers/promises";
 
 const Page = () => {
   let message : string[] = ["hi", "i'm", "charlotte", "harrington"]
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   return (
     <>
@@ -21,19 +19,25 @@ const Page = () => {
         <header className="flex h-[10%] w-full items-center justify-between p-4 bg-transparent">
           {/* hello */}
         </header>
-        <div className="mx-[30%] my-[8%]">
+        <div className="mx-[10%] my-[10%]">
           <div
-            className={` text-[#ffffff] text-left text-8xl ${digit2000.className}`}
+            className={`w-[30%] text-[#ffffff] text-left text-8xl ${digit2000.className}`}
           >
             <Typewriter
-              text = "hi, i'm charlotte harrington"
+              text = {`hi, i''m charlotte harrington`}
               // loop = {true}
               delay = {6000}
               speed={50}
               random={50}
+              onFinished={() => {
+                setTimeout(() => setIsModalOpen(true), 1000)
+              }}
+              // cursor={false}
             />
           </div>
-
+        {isModalOpen && (
+          <Popup />
+        )}
         </div>
       </div>
     </>

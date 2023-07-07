@@ -26,6 +26,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-image:url(../public/green_gradient_2.svg);
+  background-image:url(../public/green-purple-pink-gradient.png);
   background-size:cover;
 }

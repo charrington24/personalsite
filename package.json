@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "react-modal": "^3.16.1",
     "react-ts-typewriter": "^0.1.8-b",
     "typewriter-effect": "^2.20.1"
+  },
+  "devDependencies": {
+    "@types/react-modal": "^3.16.0"
   }
 }
