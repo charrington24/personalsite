@@ -15,6 +15,11 @@ module.exports = {
       fontFamily: {
         'digit2000': ['01 Digit2000', 'sans-serif']
       },
+      colors: {
+        'terminal-green' : '#4AF626',
+        'terminal-green-light' : '#6FFC3E',
+        'terminal-blue' : '#001AFF'
+      }
     },
   },
   plugins: [],
