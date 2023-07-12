@@ -22,7 +22,7 @@ const Page = () => {
 
   // useEffect(()=>{
   //   console.log("hi")
-  //   if(!location) return;
+  //   if(!location) return;//
   //   if(!width) return;
   //   // setWidth(window.innerWidth)
   //   if (width < 1300) {
