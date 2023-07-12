@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import Link from "next/link";
 import Popup from './components/Popup';
@@ -13,17 +13,32 @@ import Netscape from "./components/Netscape";
 
 const Page = () => {
   const [isPopup1Open, setIsPopup1Open] = useState(false);
+  const [location, setLocation] = useState(false);
   const [isPopup2Open, setIsPopup2Open] = useState(false);
+  const [minipopup, setminipopup] = useState(false);
+  const [curtop, setCurtop] = useState(0);
+  const [curleft, setCurleft] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(()=>{
+    console.log("hi")
+    if(!location) return;
+    if (width < 1300) {
+      setminipopup(true)
+      setIsPopup1Open(false)
+    } else {
+      setIsPopup1Open(true)
+      setminipopup(false)
+    }
+  }, [window.innerWidth])
 
   return (
+    <>
     <div>
-      <div className="w-full flex flex-wrap h-screen">
-        {/* <header className="flex h-[10%] w-full items-center justify-between p-4 bg-transparent">
-          {/* hello */}
-        {/* </header> */} 
-        <div className="mx-[10%] my-[10%]">
+
+        <div className="mx-[10%] my-[10%] flex flex-wrap">
           <div
-            className={`sm:w-[630px] w-[60%] text-[#4AF626] text-left text-5xl sm:text-8xl flex-initial italic ${argentPixel.className}`}
+            className={`sm:w-[630px] w-[60%] mb-4 text-[#4AF626] text-left text-5xl sm:text-8xl flex-initial italic ${argentPixel.className}`}
           >
             <Typewriter
               text={`hi, i'm charlotte harrington`}
@@ -31,14 +46,52 @@ const Page = () => {
               speed={50}
               random={50}
               onFinished={() => {
-                setTimeout(() => setIsPopup1Open(true), 1000)
+                setTimeout(() => setLocation(true), 1000)
               }}
             />
           </div>
-          {/* {isPopup1Open && ( */}
-            {/* // <div className={`flex-initial`}> */}
-            {/* <Layer suffix="%" translatex={-.5} translatey={1} content={
-              <Popup top={"top-[15%]"} left={"left-[55%]"} title={"elevator_pitch.txt"} content={
+          {location && (
+            <div
+              ref={el => {
+                // console.log(el)
+                if (!el) return;
+                //  if (!render){
+                console.log(el.getBoundingClientRect())
+                setCurtop(el.getBoundingClientRect().y)
+                setCurleft(el.getBoundingClientRect().x)
+                // console.log(width)
+                // if (width < 1300) {
+                setminipopup(true)
+                //   setIsPopup1Open(false)
+                // } else {
+                  // setIsPopup1Open(true)
+                }}
+              //     setminipopup(false)
+              //   }
+              // }}
+              className={`flex-initial relative self-end sm:w-auto w-[300px] sm:h-[295px] h-[250px]`}>
+              {minipopup &&
+                <Popup top={`top-[${curtop}px]`} left={`left-[${curleft}px]`} title={"elevator_pitch.txt"} content={
+                  <>
+                    <span>i'm a</span>
+                    <span><Typewriter
+                      text={[" UI/UX designer", " database architect", " full-stack developer"]}
+                      delay={1500}
+                      speed={50}
+                      random={50}
+                      onFinished={() => {
+                        setTimeout(() => setIsPopup2Open(true), 1000)
+                      }}
+                    /></span>
+                    <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
+                  </>
+                } />
+              }</div>
+          )}
+
+          {isPopup1Open && (
+            <Layer suffix="px" translatex={-5} translatey={5} content={
+              <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
                 <>
                   <span>i'm a</span>
                   <span><Typewriter
@@ -50,25 +103,25 @@ const Page = () => {
                       setTimeout(() => setIsPopup2Open(true), 1000)
                     }}
                   /></span>
-                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br/></p>
+                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
                 </>
               } />
             } frame={
-              <Popup top={"top-[15%]"} left={"left-[55%]"} title={"elevator_pitch.txt"} content={
+              <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
                 <>
                   <span>i'm a </span>
                   <span>front-end developer</span>
-                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br/></p>
+                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
                 </>
               } />
-            } number={10} top={10} left={55} /></div>
-          )} */}
-          {/* {isPopup2Open && ( */}
+            } number={10} top={curtop} left={curleft} />
+          )}
+          {isPopup2Open && (
             <Netscape />
-          {/* // )} */}
+          )}
         </div>
       </div>
-    </div>
+      </>
   );
 };
 

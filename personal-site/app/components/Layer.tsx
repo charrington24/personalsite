@@ -26,6 +26,14 @@ type Frame = {
 const Layer: React.FC<Props> = ({ content, frame, number, top, left, translatex, translatey, suffix }) => {
     const [curtop, setCurtop] = useState(top);
     const [curleft, setCurleft] = useState(left);
+    
+    function setLocation(newTop: number, newLeft: number) {
+        // top = newTop
+        // left = newLeft
+        setCurtop(newTop)
+        setCurleft(newLeft)
+
+    }
     const [curz, setCurz] = useState(50);
     const [frames, setFrames] = useState<Frame[]>([])
     const [render, setRender] = useState(false)
@@ -39,6 +47,7 @@ const Layer: React.FC<Props> = ({ content, frame, number, top, left, translatex,
         setCounter(index)
         addFrame()
     }
+
 
     useEffect(() => {
         if (index > number) return;
@@ -71,25 +80,24 @@ const Layer: React.FC<Props> = ({ content, frame, number, top, left, translatex,
 
     return (
         <>
-            {render && (
-                <>
-                    {frames.map((fr, index) => {
-                        return (
-                            <div className={`absolute`}
-                                style={{
-                                    top: `${fr.top}${suffix}`,
-                                    left: `${fr.left}${suffix}`,
-                                    zIndex: `${fr.z}`,
-                                }}
-                                key={index}
-                            >
-                                {fr.body}
-                            </div>
-                        )
-                    })}
-                </>
-            )}
-
+                {render && (
+                    <>
+                        {frames.map((fr, index) => {
+                            return (
+                                <div className={`absolute w-[300px] h-[150px] sm:w-[500px] sm:h-[275px]`}
+                                    style={{
+                                        top: `${curtop + (index * translatey)}${suffix}`,
+                                        left: `${curleft + (index * translatex)}${suffix}`,
+                                        zIndex: `${50 + (index * 5)}`,
+                                    }}
+                                    key={index}
+                                >
+                                    {fr.body}
+                                </div>
+                            )
+                        })}
+                    </>
+                )} 
         </>
     );
 };

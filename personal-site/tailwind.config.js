@@ -19,7 +19,11 @@ module.exports = {
         'terminal-green' : '#4AF626',
         'terminal-green-light' : '#6FFC3E',
         'terminal-blue' : '#001AFF'
-      }
+      },
+      cursor: {
+        'default': 'url(/public/Cursor_1.cur), default',
+        'pointer': 'url(/public/Cursor_15.cur), pointer',
+      },
     },
   },
   plugins: [],

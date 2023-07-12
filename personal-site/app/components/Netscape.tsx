@@ -9,7 +9,7 @@ interface Props {
 const Netscape = (): JSX.Element => {
     return (
         <div
-          className="bg-white my-10 border-solid border-[#fffefe] border-[3px] flex flex-initial flex-wrap gap-0 items-start justify-start overflow-hidden"
+          className="bg-white my-4 border-solid border-[#fffefe] border-[3px] flex flex-initial flex-wrap gap-0 items-start justify-start overflow-hidden"
           style={{
             boxShadow: "0px 4.64px 4.64px 0px rgba(0, 0, 0, 0.25)",
             backdropFilter: "blur(2.32px)",
@@ -62,17 +62,19 @@ const Netscape = (): JSX.Element => {
             }}
           >
             <div
-              className="bg-[rgba(255,255,255,0.02)] rounded-xl border-solid border-[#5d769a] border-2 sm:h-[57px] sm:ml-20 ml-[5%] mr-[10%] my-[2%] flex flex-initial"
+              className="bg-[rgba(255,255,255,0.02)] rounded-xl border-solid border-[#5d769a] border-2 sm:h-[57px] sm:ml-20 ml-[5%] mr-[10%] my-[2%] py-[5px] sm:py-[10px] flex flex-initial"
               style={{
                 boxShadow:
                   "inset 3px 3px 2px 0px rgba(255, 255, 255, 0.99), inset -3px -3px 2px 0px rgba(0, 0, 0, 0.25), 1px 1px 1px 0px rgba(255, 255, 255, 0.36), -1px -1px 1px 0px rgba(0, 0, 0, 0.25)",
               }}
             >
               <div
-                className={`bg-[#ffffff] rounded-[5px] sm:h-8 my-[2%] mx-[5%] text-[#000000] ${pixelOperator.className} sm:text-2xl text-sm text-left w-full py-[1%] px-2 text-ellipsis flex-initial `}
+                className={`bg-[#ffffff] rounded-[5px] sm:h-8 mx-[5%] px-2 text-[#000000] ${pixelOperator.className} sm:text-2xl text-sm w-full text-ellipsis justify-center flex-initial`}
                 style={{ boxShadow: "inset 1px 1px 2px 0px rgba(0, 0, 0, 0.77)" }}
               >
-                  www.experience.me
+                  {/* <div className=''> */}
+                    www.experience.me
+                  {/* </div> */}
               </div>
             </div>
           </div>
@@ -84,7 +86,7 @@ const Netscape = (): JSX.Element => {
               Home Download
           </div>
     
-          <div className="flex-initial overflow-scroll w-full sm:h-[700px] sm:h-[300px]">
+          <div className="flex-initial overflow-auto w-full sm:h-[700px] sm:h-[300px]">
             <ExperienceCard title="coursicle"/>
             <ExperienceCard title="plug power"/>
           </div>
