@@ -38,11 +38,10 @@ a, button {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-image:url(../public/black_blue_3.svg);
+  /* background-image:url(../public/black_blue_3.svg); */
   /* background-repeat:no-repeat; */
   /* background-size:cover; */
-  /* background-color: black;
-   */
+  background-color: black;
   /* background-image: linear-gradient(
   350deg,
   hsl(240deg 100% 34%) 0%,

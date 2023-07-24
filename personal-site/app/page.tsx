@@ -75,7 +75,7 @@ const Page = () => {
               {minipopup &&
                 <Popup top={`top-[${curtop}px]`} left={`left-[${curleft}px]`} title={"elevator_pitch.txt"} content={
                   <>
-                    <span>i`&apos;`m a</span>
+                    <span>i&apos;m a</span>
                     <span><Typewriter
                       text={[" UI/UX designer", " database architect", " full-stack developer"]}
                       delay={1500}
@@ -95,7 +95,7 @@ const Page = () => {
             <Layer suffix="px" translatex={-5} translatey={5} content={
               <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
                 <>
-                  <span>i`&apos;`m a</span>
+                  <span>i&apos;m a</span>
                   <span><Typewriter
                     text={[" UI/UX designer", " database architect", " full-stack developer"]}
                     delay={1500}
@@ -111,7 +111,7 @@ const Page = () => {
             } frame={
               <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
                 <>
-                  <span>i`&apos;`m a </span>
+                  <span>i&apos;m a </span>
                   <span>front-end developer</span>
                   <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
                 </>

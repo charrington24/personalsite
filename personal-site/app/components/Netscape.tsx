@@ -101,35 +101,6 @@ const Netscape = (): JSX.Element => {
           ></div>
         </div>
       );
-//   return (
-//     <div className={`netscape`}>
-//       <div className="overlap-group">
-//         <div className="window-header">
-//           <div className="prompt-txt">prompt.txt</div>
-//           <div className="min-button" />
-//           <div className="exit-button" />
-//           <div className="window-button" />
-//         </div>
-//         <div className="navbar-one">
-//           <p className="file-edit-view">
-//             File&nbsp;&nbsp;Edit&nbsp;&nbsp;View&nbsp;&nbsp;Search&nbsp;&nbsp;Go&nbsp;&nbsp;Bookmarks&nbsp;&nbsp;Tasks&nbsp;&nbsp;Help
-//           </p>
-//         </div>
-//         <div className="navbar-two">
-//           <div className="search-wrapper">
-//             <div className="search-text">
-//               <div className="www-work-experience">www.work.experience</div>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="navbar">
-//           <p className="home-download"> Home&nbsp;&nbsp; Download</p>
-//         </div>
-//         <div className="body" />
-//         <div className="footer" />
-//       </div>
-//     </div>
-//   );
 };
 
 export default Netscape;
