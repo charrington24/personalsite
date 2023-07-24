@@ -9,13 +9,13 @@ interface Props {
 const Netscape = (): JSX.Element => {
     return (
         <div
-          className="bg-white my-4 border-solid border-[#fffefe] border-[3px] flex flex-initial flex-wrap gap-0 items-start justify-start overflow-hidden"
+          className="bg-white my-4 border-solid border-[#fffefe] border-[3px] h-screen flex flex-initial flex-wrap gap-0 items-start justify-start overflow-hidden"
           style={{
             boxShadow: "0px 4.64px 4.64px 0px rgba(0, 0, 0, 0.25)",
             backdropFilter: "blur(2.32px)",
           }}
         >
-          <div className={`bg-[#000080] ${pixelOperator.className} sm:text-3xl px-[1%] flex w-full flex-row font-bold sm:h-[49px] justify-between text-[#ffffff] text-left`}>
+          <div className={`bg-[#000080] ${pixelOperator.className} sm:text-3xl px-[1%] flex w-full flex-initial flex-row font-bold sm:h-[49px] justify-between text-[#ffffff] text-left`}>
             Browser
           <div className="flex-initial flex justify-end">
             <div
@@ -62,14 +62,14 @@ const Netscape = (): JSX.Element => {
             }}
           >
             <div
-              className="bg-[rgba(255,255,255,0.02)] rounded-xl border-solid border-[#5d769a] border-2 sm:h-[57px] sm:ml-20 ml-[5%] mr-[10%] my-[2%] py-[5px] sm:py-[10px] flex flex-initial"
+              className="bg-[rgba(255,255,255,0.02)] flex-initial rounded-xl border-solid border-[#5d769a] border-2 sm:h-[57px] sm:ml-20 ml-[5%] mr-[10%] my-[2%] py-[5px] sm:py-[10px] flex"
               style={{
                 boxShadow:
                   "inset 3px 3px 2px 0px rgba(255, 255, 255, 0.99), inset -3px -3px 2px 0px rgba(0, 0, 0, 0.25), 1px 1px 1px 0px rgba(255, 255, 255, 0.36), -1px -1px 1px 0px rgba(0, 0, 0, 0.25)",
               }}
             >
               <div
-                className={`bg-[#ffffff] rounded-[5px] sm:h-8 mx-[5%] px-2 text-[#000000] ${pixelOperator.className} sm:text-2xl text-sm w-full text-ellipsis justify-center flex-initial`}
+                className={`bg-[#ffffff] flex-initial rounded-[5px] sm:h-8 mx-[5%] px-2 text-[#000000] ${pixelOperator.className} sm:text-2xl text-sm w-full text-ellipsis justify-center`}
                 style={{ boxShadow: "inset 1px 1px 2px 0px rgba(0, 0, 0, 0.77)" }}
               >
                   {/* <div className=''> */}
@@ -80,19 +80,19 @@ const Netscape = (): JSX.Element => {
           </div>
     
           <div
-            className={`bg-[#5d769a] ${pixelOperator.className} sm:text-2xl px-[1%] border-solid border-[#000000] flex-initial w-full sm:h-10 text-[#fefefe] text-left`}
+            className={`bg-[#5d769a] ${pixelOperator.className} flex-initial sm:text-2xl px-[1%] border-solid border-[#000000] w-full sm:h-10 text-[#fefefe] text-left`}
             style={{ borderWidth: "0px 0px 1px 0px" }}
           >
               Home Download
           </div>
     
-          <div className="flex-initial overflow-auto w-full sm:h-[700px] sm:h-[300px]">
+          <div className="overflow-y-scroll border-b-[43px] sm:border-b-[60px] h-[85%] sm:h-[70%] w-full">
             <ExperienceCard title="coursicle"/>
             <ExperienceCard title="plug power"/>
           </div>
     
           <div
-            className="border-solid border-[#000000] w-full h-[43px] flex-initial"
+            className="border-solid border-[#000000] w-full h-[43px] absolute bottom-0"
             style={{
               background:
                 "linear-gradient(180deg, rgba(93, 118, 154, 1.00) 0%,rgba(56, 74, 110, 1.00) 100%)",
