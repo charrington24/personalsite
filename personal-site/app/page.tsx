@@ -11,17 +11,17 @@ const Page = () => {
   return (
     <>
       <div className={`justify-center items-center h-screen`}>
-        <div className={`bg-black border-b-2 border-[rgba(200,200,200)] sticky top-0 sm:text-3xl flex flex-wrap text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
+        <div className={`bg-black border-b-2 border-[rgba(200,200,200)] sticky top-0 sm:justify-start justify-between text-3xl flex flex-wrap text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
           {navbarLinks.map((title) => {
             return (
-              <span key={title} className={`mr-[2%] hover:bg-white hover:border-white hover:text-black`}>
+              <span key={title} className={`sm:mr-[4%] hover:bg-white hover:border-white hover:text-black`}>
                 {title} 
               </span>
             )
           })}
         </div>
         <div className="flex flex-wrap ">
-          <div className={`flex-initial sm:text-8xl text-5xl text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
+          <div className={`flex-initial sm:text-8xl text-6xl text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
             <div className="">
               <div className="flex flex-wrap justify-between bg-black">
                 <div className={`flex-initial text-red-600`}>
@@ -56,7 +56,7 @@ const Page = () => {
             <div className={``}>
               {projectTitles.map((title) => {
                 return (
-                  <div key={title} className={`duration-1000 ease-in-out hover:h-96 border-t-2 border-[rgba(200,200,200)] w-full hover:bg-white hover:border-white hover:text-black`}>
+                  <div key={title} className={`text-[55px] sm:text-8xl duration-1000 truncate ease-in-out hover:h-96 border-t-2 border-[rgba(200,200,200)] w-full hover:bg-white hover:border-white hover:text-black`}>
                     {title}
                   </div>
                 )
