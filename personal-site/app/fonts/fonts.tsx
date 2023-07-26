@@ -32,6 +32,11 @@ export const argentPixel = localFont({
   display: 'swap',
 })
 
+export const argentPixelItalic = localFont({
+  src: 'rawFiles/ArgentPixelCF-Italic.otf',
+  display: 'swap',
+})
+
 export const planetKosmos = localFont({
   src: 'rawFiles/PLANK___.ttf',
   display: 'swap',

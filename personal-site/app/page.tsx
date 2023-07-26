@@ -5,7 +5,7 @@ import Link from "next/link";
 import Popup from './components/Popup';
 
 import Typewriter from 'react-ts-typewriter';
-import { abstract, argentPixel, digit2000, pixelOperator } from "./fonts/fonts";
+import { abstract, argentPixel, argentPixelItalic, digit2000, pixelOperator } from "./fonts/fonts";
 import Layer from "./components/Layer";
 import { title } from "process";
 import Netscape from "./components/Netscape";
@@ -34,23 +34,37 @@ const Page = () => {
   //   }
   // }, [window.innerWidth])
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(()=>{
+    setTimeout(() => setLocation(true), 1000)
+  }, [])
+
   return (
     <>
     <div>
 
-        <div className="mx-[10%] my-[10%] flex flex-wrap">
+        <div className=" my-[10%]">
+          <div className="w-full h-[40vh] flex items-center justify-center">
           <div
-            className={`sm:w-[630px] w-[60%] mb-4 text-[#4AF626] text-left text-5xl sm:text-8xl flex-initial italic ${argentPixel.className}`}
+            className={`text-[#4AF626] text-center self-center text-6xl sm:text-8xl flex-initial italic ${argentPixelItalic.className}`}
           >
-            <Typewriter
-              text={`hi, i'm charlotte harrington`}
+            hey, i&apos;m charlotte
+            {/* <Typewriter
+              text={`hey, i'm charlotte`}
               delay={6000}
               speed={50}
               random={50}
               onFinished={() => {
                 setTimeout(() => setLocation(true), 1000)
               }}
-            />
+            /> */}
+          </div>
           </div>
           {location && (
             <div
@@ -64,6 +78,7 @@ const Page = () => {
                 // console.log(width)
                 // if (width < 1300) {
                 setminipopup(true)
+                handleScroll()
                 //   setIsPopup1Open(false)
                 // } else {
                   // setIsPopup1Open(true)
@@ -71,7 +86,7 @@ const Page = () => {
               //     setminipopup(false)
               //   }
               // }}
-              className={`flex-initial relative self-end sm:w-auto w-[300px] sm:h-[295px] h-[250px]`}>
+              className={`flex items-center justify-center w-full sm:h-[295px] h-[250px]`}>
               {minipopup &&
                 <Popup top={`top-[${curtop}px]`} left={`left-[${curleft}px]`} title={"elevator_pitch.txt"} content={
                   <>
