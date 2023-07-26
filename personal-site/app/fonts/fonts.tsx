@@ -36,3 +36,13 @@ export const planetKosmos = localFont({
   src: 'rawFiles/PLANK___.ttf',
   display: 'swap',
 })
+
+export const favorit = localFont({
+  src: 'rawFiles/FavoritC.ttf',
+  display: 'swap',
+})
+
+export const spaceMono = localFont({
+  src: 'rawFiles/SpaceMono-Regular.ttf',
+  display: 'swap',
+})

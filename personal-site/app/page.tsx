@@ -1,129 +1,77 @@
 "use client"
 import React, { useEffect, useState } from "react";
-import Image from 'next/image'
-import Link from "next/link";
-import Popup from './components/Popup';
+import { spaceMono } from "./fonts/fonts";
 
-import Typewriter from 'react-ts-typewriter';
-import { abstract, argentPixel, digit2000, pixelOperator } from "./fonts/fonts";
-import Layer from "./components/Layer";
-import { title } from "process";
-import Netscape from "./components/Netscape";
-// import { setTimeout } from "timers/promises";
 
 const Page = () => {
-  const [isPopup1Open, setIsPopup1Open] = useState(false);
-  const [location, setLocation] = useState(false);
-  const [isPopup2Open, setIsPopup2Open] = useState(false);
-  const [minipopup, setminipopup] = useState(false);
-  const [curtop, setCurtop] = useState(0);
-  const [curleft, setCurleft] = useState(0);
-  // const [width, setWidth] = useState(null);
 
-  // useEffect(()=>{
-  //   console.log("hi")
-  //   if(!location) return;//
-  //   if(!width) return;
-  //   // setWidth(window.innerWidth)
-  //   if (width < 1300) {
-  //     setminipopup(true)
-  //     setIsPopup1Open(false)
-  //   } else {
-  //     setIsPopup1Open(true)
-  //     setminipopup(false)
-  //   }
-  // }, [window.innerWidth])
+  const projectTitles = ["COURSICLE", "BITJOCKEY", "PLUG POWER", "KANM RADIO"]
+  const navbarLinks = ["About", "Work", "Contact"]
 
   return (
     <>
-    <div>
+      <div className={`justify-center items-center h-screen`}>
+        <div className={`bg-black border-b-2 border-[rgba(200,200,200)] sticky top-0 sm:text-3xl flex flex-wrap text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
+          {navbarLinks.map((title) => {
+            return (
+              <span key={title} className={`mr-[2%] hover:bg-white hover:border-white hover:text-black`}>
+                {title} 
+              </span>
+            )
+          })}
+        </div>
+        <div className="flex flex-wrap ">
+          <div className={`flex-initial sm:text-8xl text-5xl text-[rgba(225,225,225)] w-full ${spaceMono.className}`}>
+            <div className="">
+              <div className="flex flex-wrap justify-between bg-black">
+                <div className={`flex-initial text-red-600`}>
+                  HOWDY
+                </div>
+                <div className={`flex-initial text-red-600 justify-self-end`}>
+                  I&apos;M
+                </div>
+                <div className={`text-red-600 mx-[5%] flex-initial hover:bg-white hover:border-white hover:text-black`}>
+                  CHARLOTTE
+                </div>
+                <div className={`flex-initial justify-self-end `}>
+                  A
+                </div>
+                <div className={`flex-initial justify-self-end `}>
+                  DEVELOPER
+                </div>
+                <div className={`flex-initial ml-[15%]`}>
+                  WELCOME
+                </div>
+                <div className={`sm:mr-[25%] mr-[5%]`}>
+                  TO
+                </div>
+                <div className={`flex-initial`}>
+                  MY
+                </div>
+                <div className={`flex-initial mx-[5%]`}>
+                  WEBSITE
+                </div>
+            </div>
+            </div>
+            <div className={``}>
+              {projectTitles.map((title) => {
+                return (
+                  <div key={title} className={`duration-1000 ease-in-out hover:h-96 border-t-2 border-[rgba(200,200,200)] w-full hover:bg-white hover:border-white hover:text-black`}>
+                    {title}
+                  </div>
+                )
+              })}
+            </div>
+            <div className={`border-t-2 border-[rgba(200,200,200)] text-red-600 sticky bottom-0 bg-black`}>
+              {/* CHARLOTTE */}
+            </div>
+            <div className={`border-[rgba(200,200,200)] sticky bottom-0 bg-black `}>
 
-        <div className="mx-[10%] my-[10%] flex flex-wrap">
-          <div
-            className={`sm:w-[630px] w-[60%] mb-4 text-[#4AF626] text-left text-5xl sm:text-8xl flex-initial italic ${argentPixel.className}`}
-          >
-            <Typewriter
-              text={`hi, i'm charlotte harrington`}
-              delay={6000}
-              speed={50}
-              random={50}
-              onFinished={() => {
-                setTimeout(() => setLocation(true), 1000)
-              }}
-            />
+            </div>
           </div>
-          {location && (
-            <div
-              ref={el => {
-                // console.log(el)
-                if (!el) return;
-                //  if (!render){
-                console.log(el.getBoundingClientRect())
-                setCurtop(el.getBoundingClientRect().y)
-                setCurleft(el.getBoundingClientRect().x)
-                // console.log(width)
-                // if (width < 1300) {
-                setminipopup(true)
-                //   setIsPopup1Open(false)
-                // } else {
-                  // setIsPopup1Open(true)
-                }}
-              //     setminipopup(false)
-              //   }
-              // }}
-              className={`flex-initial relative self-end sm:w-auto w-[300px] sm:h-[295px] h-[250px]`}>
-              {minipopup &&
-                <Popup top={`top-[${curtop}px]`} left={`left-[${curleft}px]`} title={"elevator_pitch.txt"} content={
-                  <>
-                    <span>i&apos;m a</span>
-                    <span><Typewriter
-                      text={[" UI/UX designer", " database architect", " full-stack developer"]}
-                      delay={1500}
-                      speed={50}
-                      random={50}
-                      onFinished={() => {
-                        setTimeout(() => setIsPopup2Open(true), 1000)
-                      }}
-                    /></span>
-                    <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
-                  </>
-                } />
-              }</div>
-          )}
-
-          {isPopup1Open && (
-            <Layer suffix="px" translatex={-5} translatey={5} content={
-              <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
-                <>
-                  <span>i&apos;m a</span>
-                  <span><Typewriter
-                    text={[" UI/UX designer", " database architect", " full-stack developer"]}
-                    delay={1500}
-                    speed={50}
-                    random={50}
-                    onFinished={() => {
-                      setTimeout(() => setIsPopup2Open(true), 1000)
-                    }}
-                  /></span>
-                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
-                </>
-              } />
-            } frame={
-              <Popup top={"top-[0%]"} left={"left-[0%]"} title={"elevator_pitch.txt"} content={
-                <>
-                  <span>i&apos;m a </span>
-                  <span>front-end developer</span>
-                  <p>focused on building <b>efficient</b>, <b>beautiful</b>, and <b>useful</b> products for an innovating world<br /></p>
-                </>
-              } />
-            } number={10} top={curtop} left={curleft} />
-          )}
-          {isPopup2Open && (
-            <Netscape />
-          )}
         </div>
       </div>
-      </>
+    </>
   );
 };
 
