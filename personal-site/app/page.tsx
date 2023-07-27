@@ -1,12 +1,15 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { spaceMono } from "./fonts/fonts";
+import Image from 'next/image'
+import headshot from 'public/IMG_7295.jpg'
 
 
 const Page = () => {
 
   const projectTitles = ["COURSICLE", "BITJOCKEY", "PLUG POWER", "KANM RADIO"]
   const navbarLinks = ["About", "Work", "Contact"]
+  const [headshotShown, setHeadshotShown] = useState(false)
 
   return (
     <>
@@ -15,7 +18,7 @@ const Page = () => {
           {navbarLinks.map((title) => {
             return (
               <span key={title} className={`sm:mr-[4%] hover:bg-white hover:border-white hover:text-black`}>
-                {title} 
+                {title}
               </span>
             )
           })}
@@ -30,7 +33,10 @@ const Page = () => {
                 <div className={`flex-initial text-red-600 justify-self-end`}>
                   I&apos;M
                 </div>
-                <div className={`text-red-600 mx-[5%] flex-initial hover:bg-white hover:border-white hover:text-black`}>
+                <div
+                  onMouseEnter={() => setHeadshotShown(true)}
+                  onMouseLeave={() => setHeadshotShown(false)}
+                  className={`z-10 text-red-600 mx-[5%] flex-initial hover:bg-white hover:border-white hover:text-black`}>
                   CHARLOTTE
                 </div>
                 <div className={`flex-initial justify-self-end `}>
@@ -51,7 +57,7 @@ const Page = () => {
                 <div className={`flex-initial mx-[5%]`}>
                   WEBSITE
                 </div>
-            </div>
+              </div>
             </div>
             <div className={``}>
               {projectTitles.map((title) => {
@@ -62,12 +68,17 @@ const Page = () => {
                 )
               })}
             </div>
-            <div className={`border-t-2 border-[rgba(200,200,200)] text-red-600 sticky bottom-0 bg-black`}>
-              {/* CHARLOTTE */}
-            </div>
-            <div className={`border-[rgba(200,200,200)] sticky bottom-0 bg-black `}>
-
-            </div>
+            {headshotShown && (
+              <div className={`absolute top-0 left-0 w-screen h-screen flex justify-center items-center`}>
+              <Image
+                className={`flex-initial top-[10%] m-auto sm:h-[80%] w-screen sm:w-auto`}
+                src={headshot}
+                // width={'50%'}
+                // height={500}
+                alt="Picture of Charlotte"
+              />
+              </div>
+            )}
           </div>
         </div>
       </div>
