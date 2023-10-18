@@ -1,9 +1,8 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { spaceMono } from "./fonts/fonts";
+import headshot from '../public/IMG_7295.jpg'
 import Image from 'next/image'
-import headshot from 'public/IMG_7295.jpg'
-
 
 const Page = () => {
 
