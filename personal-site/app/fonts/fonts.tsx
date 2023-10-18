@@ -46,3 +46,8 @@ export const spaceMono = localFont({
   src: 'rawFiles/SpaceMono-Regular.ttf',
   display: 'swap',
 })
+
+export const moderatRegular = localFont({
+  src: 'rawFiles/Moderat-Regular.ttf',
+  display: 'swap',
+})
