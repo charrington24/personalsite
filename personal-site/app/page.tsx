@@ -8,6 +8,7 @@ import Image from "next/image";
 import headshot from "public/IMG_7295.jpg";
 import { space } from "postcss/lib/list";
 import { ExperienceCardNew } from "./components/ExperienceCardNew";
+import Typewriter from 'react-ts-typewriter';
 
 const Page = () => {
   const projects = [
@@ -53,9 +54,6 @@ const Page = () => {
             className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full ${moderatRegular.className}`}
           >
             <div className="my-10 flex flex-row items-center">
-              <div className="hidden">
-                <ArrowForwardIosIcon />
-              </div>
               <div className="sm:mx-[0px]">
                 Hi! I'm Charlotte Harrington :)
               </div>
