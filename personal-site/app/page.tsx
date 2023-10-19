@@ -28,9 +28,6 @@ const Page = () => {
 
   const navbarLinks = ["About", "Work", "Contact"];
   const [headshotShown, setHeadshotShown] = useState(false);
-  const [isPopup1Open, setIsPopup1Open] = useState(false);
-  const [location, setLocation] = useState(false);
-  const [isPopup2Open, setIsPopup2Open] = useState(false);
 
   return (
     <div className={`bg-[#F3F0E9] min-h-screen`}>
@@ -55,17 +52,17 @@ const Page = () => {
           >
             <div className="my-10 flex flex-row items-center">
               <div className="sm:mx-[0px]">
-                Hi! I'm Charlotte Harrington :)
+                Hi! I&apos;m Charlotte Harrington :)
               </div>
             </div>
-            <div className="flex-wrap max-lg:text-4xl max-md:text-4xl max-sm:text-2xl text-6xl my-10">
+            <div className="flex-wrap max-lg:text-4xl max-md:text-4xl max-sm:text-2xl max-[1125px]:text-5xl max-[425px]:text-xl max-[375px]:text-base max-[330px]:text-sm my-10 leading-snug">
               <span className="flex-initial">i&apos;m a</span>
               <span className="flex-initial">
-                <span className="relative sm:min-w-[622px] rounded-[10px] border-solid border-[#581845] border mx-2 mr-6 px-2">
-                <span className="-z-10 invisible mx-6">
+                <span className="relative sm:rounded-[10px] rounded-[5px] border-solid border-[#581845] border mx-2 min-[1125px]:mr-6 px-2">
+                <span className="-z-10 invisible lg:mx-6">
                   {" "}full-stack developer{" "}
                 </span>
-                <span className="absolute left-[4px] top-0 flex-initial items-center z-20 ">
+                <span className="absolute left-[4px] top-[-10x] flex-initial items-center z-20 ">
                   <Typewriter
                     text={[
                       " UI/UX designer",
@@ -92,7 +89,7 @@ const Page = () => {
             </div>
             <div className={`flex flex-wrap`}>
               {projects.map((p) => {
-                return <ExperienceCardNew imageSrc={p.img} title={p.title} />;
+                return <ExperienceCardNew key={p.title} imageSrc={p.img} title={p.title} />;
               })}
             </div>
             {headshotShown && (

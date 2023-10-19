@@ -16,7 +16,7 @@ export const ExperienceCardNew = ({
         <div className="flex flex-row items-center">
         {props.imageSrc.map((image) => {
           return (
-            <img
+            <img key={image}
               className="hover:scale-[100.1%] ease-in-out overflow-hidden shrink-0 max-h-[400px] rounded flex-initial"
               src={image}
             />
