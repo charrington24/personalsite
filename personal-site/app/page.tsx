@@ -45,7 +45,7 @@ const Page = () => {
                     <span className="flex-initial">i&apos;m a</span>
                     <span className="flex-initial">
                       <span className="relative sm:rounded-[10px] rounded-[5px] border-solid border-[#581845] border mx-2 min-[1125px]:mr-6 px-2">
-                        <span className="-z-10 invisible lg:mx-4">
+                        <span className="-z-10 invisible lg:mx-4 mx-2">
                           {" "}
                           full-stack developer{" "}
                         </span>
