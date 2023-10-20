@@ -1,9 +1,11 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { spaceMono } from "./fonts/fonts";
-import Image from 'next/image'
-import headshot from 'public/IMG_7295.jpg'
 
+import {
+  moderatRegular,
+} from "./fonts/fonts";
+import Image from "next/image";
+import headshot from "public/IMG_7295.jpg";
+import { ExperienceCardNew } from "./components/ExperienceCardNew";
+import Typewriter from 'react-ts-typewriter';
 
 const Page = () => {
   const projects = [
@@ -22,10 +24,6 @@ const Page = () => {
   ];
 
   const navbarLinks = ["About", "Work", "Contact"];
-  const [headshotShown, setHeadshotShown] = useState(false);
-  const [isPopup1Open, setIsPopup1Open] = useState(false);
-  const [location, setLocation] = useState(false);
-  const [isPopup2Open, setIsPopup2Open] = useState(false);
 
   return (
     <div className={`bg-[#F3F0E9] min-h-screen`}>
@@ -49,9 +47,6 @@ const Page = () => {
             className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full ${moderatRegular.className}`}
           >
             <div className="my-10 flex flex-row items-center">
-              <div className="hidden">
-                <ArrowForwardIosIcon />
-              </div>
               <div className="sm:mx-[0px]">
                 Hi! I'm Charlotte Harrington :)
               </div>
@@ -80,32 +75,20 @@ const Page = () => {
                 </span>
                 </span>
               </span>
-              {/* {isPopup2Open && ( */}
+   
               <span className="flex-initial transition ease-in-out">
                 focused on building <b>efficient</b>, <b>beautiful</b>, and{" "}
                 <b>useful</b> products for an innovating world
                 <br />
               </span>
-              {/* )} */}
+   
             </div>
             <div className={`flex flex-wrap`}>
               {projects.map((p) => {
                 return <ExperienceCardNew imageSrc={p.img} title={p.title} />;
               })}
             </div>
-            {headshotShown && (
-              <div
-                className={`absolute top-0 left-0 w-screen h-screen flex justify-center items-center`}
-              >
-                <Image
-                  className={`flex-initial top-[10%] m-auto sm:h-[80%] w-screen sm:w-auto`}
-                  src={headshot}
-                  // width={'50%'}
-                  // height={500}
-                  alt="Picture of Charlotte"
-                />
-              </div>
-            )}
+         
           </div>
         </div>
       </div>
