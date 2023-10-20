@@ -1,6 +1,5 @@
-import { IMAGES_MANIFEST } from "next/dist/shared/lib/constants";
+
 import { moderatRegular } from "../fonts/fonts";
-import Tag from "./Tag";
 import Image from "next/image";
 
 
