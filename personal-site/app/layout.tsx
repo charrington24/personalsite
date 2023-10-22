@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="bg-[#F3F0E9]" lang="en">
-      <body className={`bg-[#F3F0E9] ${moderatRegular.className}`}>
+      <body className={`bg-[#F3F0E9] text-[#581845] ${moderatRegular.className}`}>
         <Header />
         {children}
         <Footer />
