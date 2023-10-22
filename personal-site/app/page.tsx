@@ -35,7 +35,7 @@ const Page = () => {
                 className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full  ${moderatRegular.className}`}
               >
                 <section className="mb-6">
-                  <div className="my-10 flex flex-row items-center">
+                  <div className="md:my-10 mt-16 flex flex-row items-center">
                     <div className="sm:mx-[0px] lg:text-8xl max-[1024px]:text-7xl max-md:text-6xl max-sm:text-5xl">
                       Hi! I&apos;m Charlotte Harrington :)
                     </div>

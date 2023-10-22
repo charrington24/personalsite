@@ -41,7 +41,7 @@ const Header: React.FC = () => {
     <header
       className={
         !isOpen
-          ? `z-10 fixed  duration-500 ease-in-out top-0 md:px-10 lg:px-40 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
+          ? `z-50 fixed  duration-500 ease-in-out top-0 md:px-10 lg:px-40 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
           : `bg-[#F3F0E9] border-b border-b-[#581845] z-50 fixed top-0 md:px-10 lg:px-40 px-4 p-6 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
       }
     >
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
               WebkitFilter: "drop-shadow(.5px 1px 1.5px #555)",
               filter: "drop-shadow(.25px 1px 2px #555)",
             }}
-            className="hover:scale-[105%] duration-300 ease-in-out md:w-[150px] w-[75px]"
+            className="hover:scale-[105%] duration-300 ease-in-out md:w-[140px] w-[75px] mt-[10px]"
             // width={150}
             alt={"Pixel art portrait of Charlotte"}
           />
