@@ -27,7 +27,7 @@ const Page = () => {
 
   return (
     <div className="relative h-full">
-      <div className={`bg-[#F3F0E9] flex flex-col`}>
+      <div className={`flex flex-col`}>
         <div className={`justify-center items-center`}>
           <main className="flex-1">
             <div className="flex flex-wrap md:py-40 md:px-10 lg:px-40 px-4 py-10">

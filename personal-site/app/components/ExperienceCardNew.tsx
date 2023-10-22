@@ -15,6 +15,7 @@ export const ExperienceCardNew = ({
       <div className="flex flex-wrap m-2">
         <div className="flex flex-row items-center">
             <Image
+              style={{WebkitFilter: 'drop-shadow(.5px 1px 1px #555)', filter: 'drop-shadow(.5px 1px 1px #555)'}}
               className="hover:scale-[105%] duration-500 ease-in-out md:max-w-[700px] rounded flex-initial"
               src={props.imageSrc}
               alt="Device mockup"
