@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { moderatRegular } from "./fonts/fonts";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="bg-[#F3F0E9]" lang="en">
-      <body className={inter.className}>
+      <body className={`bg-[#F3F0E9] ${moderatRegular.className}`}>
         <Header />
         {children}
         <Footer />
