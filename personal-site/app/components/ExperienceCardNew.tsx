@@ -20,7 +20,7 @@ export const ExperienceCardNew = ({
     <Link
       key={props.id}
       href={`/project/${props.id}`}
-      className="hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
+      className="bg-[#F3F0E9] hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
     >
       <div
         className={`border-[#581845] border-b border-solid text-[#581845] px-2 sm:px-4 pb-2 sm:pb-4 flex-initial h-min text-3xl lg:text-5xl text-left w-full ${moderatRegular.className}`}

@@ -32,7 +32,7 @@ const Page = () => {
       <div className={`bg-[#F3F0E9] flex flex-col`}>
         <div className={`justify-center items-center`}>
           <main className="flex-1">
-            <div className="flex flex-wrap md:py-40 md:px-10 lg:px-40 px-4 py-10">
+            <div className="flex flex-wrap">
               <div
                 className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full  ${moderatRegular.className}`}
               >
