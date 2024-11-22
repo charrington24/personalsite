@@ -18,6 +18,7 @@ export const ExperienceCardNew = ({
 }: IExperienceCardNewProps): JSX.Element => {
   return (
     <Link
+      key={props.id}
       href={`/project/${props.id}`}
       className="hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
     >
