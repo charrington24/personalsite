@@ -51,7 +51,7 @@ export const ExperienceCardNew = ({
         <div className="flex flex-col gap-[10px]">
           <div className="flex flex-wrap gap-[5px]">
             {props.tags.map((tag) => (
-              <Tag>{tag}</Tag>
+              <Tag key={tag}>{tag}</Tag>
             ))}
           </div>
           <div className="flex flex-wrap md:text-3xl text-xl md:w-max-[900px] text-wrap box-border w-fit">
