@@ -1,27 +1,14 @@
-import { moderatRegular } from "./fonts/fonts";
+import { moderatRegular, spaceMono } from "./fonts/fonts";
 import bitjockey from "../public/bitjockey_both.webp";
 import coursicle from "../public/coursicle_mac.webp";
 import kanm from "../public/kanm_both.webp";
 
 import { ExperienceCardNew } from "./components/ExperienceCardNew";
 import { DynamicComponent } from "./components/DynamicComponent";
+import ProjectList from "./components/ProjectList";
 
 
 const Page = () => {
-  const projects = [
-    {
-      title: "Bitjockey",
-      img: bitjockey,
-    },
-    {
-      title: "Coursicle Chat",
-      img: coursicle,
-    },
-    {
-      title: "KANM Website",
-      img: kanm,
-    },
-  ];
 
   const navbarLinks = ["About", "Work", "Contact"];
 
@@ -42,38 +29,28 @@ const Page = () => {
                   </div>
                   <div className="flex-wrap max-lg:text-4xl max-md:text-4xl max-sm:text-2xl max-[1125px]:text-5xl max-[425px]:text-2xl max-[375px]:text-base max-[330px]:text-sm my-10">
                     <span className="flex-initial">i&apos;m a</span>
-                    <span className="flex-initial">
-                      <span className="relative sm:rounded-[10px] rounded-[5px] border-solid border-[#581845] border mx-2 min-[1125px]:mr-6 px-2">
-                        <span className="-z-10 invisible lg:mx-4 mx-4">
+                    {/* <span className="flex-initial">
+                      <span className=""> */}
+                        {/* <span className={`-z-10 invisible lg:mx-4 mx-4`}>
                           {" "}
                           full-stack developer{" "}
-                        </span>
-                        <span className="absolute left-[4px] top-[-10x] flex-initial items-center z-20 ">
+                        </span> */}
+                        <span className={`text-wrap sm:rounded-[10px] rounded-[5px] flex-nowrap w-max items-center z-20 `}>
                           <DynamicComponent />
                         </span>
-                      </span>
-                    </span>
-                    <span className="flex-initial transition ease-in-out">
+                      {/* </span>
+                    </span> */}
+                    <p className="flex-initial transition ease-in-out">
                       focused on building <b>efficient</b>, <b>beautiful</b>,
                       and <b>useful</b> products for an innovating world
                       <br />
-                    </span>
+                    </p>
                   </div>
                 </section>
                 <h1 className="font-bold sm:text-2xl text-lg text-[#58184585] my-2">
                   RECENT WORK
                 </h1>
-                <div className={`flex flex-wrap`}>
-                  {projects.map((p) => {
-                    return (
-                      <ExperienceCardNew
-                        key={p.title}
-                        imageSrc={p.img as any}
-                        title={p.title}
-                      />
-                    );
-                  })}
-                </div>
+                <ProjectList numProjects={3}/>
               </div>
             </div>
           </main>

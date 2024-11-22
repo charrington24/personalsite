@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.14",
@@ -16,24 +17,26 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "^18.2.6",
     "autoprefixer": "10.4.14",
+    "contentful": "^11.2.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "loader-utils": ">=1.4.2",
     "minimist": ">=0.2.4",
     "next": "^13.5.6",
     "next-optimized-images": "^2.6.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.28.0",
     "react-ts-typewriter": "^0.1.8-b",
     "responsive-loader": "^3.1.2",
     "svg-sprite-loader": "^2.0.3",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
     "webp-loader": "^0.6.0",
-    "webpack": "^5.73.0",
-    "loader-utils": ">=1.4.2"
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
-    "minimist": ">=0.2.4",
-    "loader-utils": ">=1.4.2"
+    "loader-utils": ">=1.4.2",
+    "minimist": ">=0.2.4"
   }
 }

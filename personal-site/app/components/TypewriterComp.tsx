@@ -9,8 +9,8 @@ const TypewriterComp: React.FC<Props> = () => {
     <>
       <Typewriter
         text={[
-          " UI/UX designer",
           " database architect",
+          " UI/UX designer",
           " full-stack developer",
         ]}
         delay={1500}

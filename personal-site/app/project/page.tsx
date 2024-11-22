@@ -1,11 +1,6 @@
 import { moderatRegular } from "../fonts/fonts";
 import bitjockey from "../../public/bitjockey_both.webp";
-import coursicle from "../../public/coursicle_mac.webp";
-import kanm from "../../public/kanm_both.webp";
-
-import { ExperienceCardNew } from "../components/ExperienceCardNew";
-import { DynamicComponent } from "../components/DynamicComponent";
-import { ProjectPage } from "../components/ProjectPage";
+import ProjectList from "../components/ProjectList";
 
 
 const Page = () => {
@@ -33,7 +28,7 @@ const Page = () => {
   
 
   return (
-    <div className="relative h-full">
+    <div className="relative flex flex-col md:py-40 md:px-10 lg:px-40 px-4 py-10 mt-16 prose mx-auto p-6">
       <div className={`bg-[#F3F0E9] flex flex-col`}>
         <div className={`justify-center items-center`}>
           <main className="flex-1">
@@ -41,7 +36,7 @@ const Page = () => {
               <div
                 className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full  ${moderatRegular.className}`}
               >
-                <ProjectPage {...project}/>
+                <ProjectList numProjects={5}/>
               </div>
             </div>
           </main>
