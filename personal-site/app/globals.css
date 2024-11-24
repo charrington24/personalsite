@@ -36,6 +36,10 @@ a, button {
   @apply cursor-pointer;
 } */
 
+p {
+  margin-bottom: 8px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   /* background-image:url(../public/black_blue_3.svg); */

@@ -28,11 +28,12 @@ const Page = () => {
   
 
   return (
-    <div className="relative flex flex-col md:py-40 md:px-10 lg:px-40 px-4 py-10 mt-16 prose mx-auto p-6">
+    <div className="relative flex flex-col md:py-40 md:px-10 lg:px-40 px-4 py-10 mt-16 prose mx-auto p-6 gap-[10px]">
       <div className={`bg-[#F3F0E9] flex flex-col`}>
         <div className={`justify-center items-center`}>
           <main className="flex-1">
             <div className="flex flex-wrap">
+            <h1 className="sm:text-6xl text-4xl my-4">Projects</h1>
               <div
                 className={`flex-initial sm:text-6xl text-4xl text-[#581845] w-full  ${moderatRegular.className}`}
               >

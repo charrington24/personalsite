@@ -20,7 +20,7 @@ export const ExperienceCardNew = ({
     <Link
       key={props.id}
       href={`/project/${props.id}`}
-      className="bg-[#F3F0E9] hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
+      className="bg-[#F3F0E9] hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] lg:max-w-[48%] md:max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
     >
       <div
         className={`border-[#581845] border-b border-solid text-[#581845] px-2 sm:px-4 pb-2 sm:pb-4 flex-initial h-min text-3xl lg:text-5xl text-left w-full ${moderatRegular.className}`}
@@ -30,14 +30,14 @@ export const ExperienceCardNew = ({
 
       {props.imageSrc && (
         <div className="px-2 sm:px-4 border-[#581845] border-b border-solid">
-          <div className="flex flex-wrap m-2">
+          <div className="flex flex-wrap m-2 justify-center items-center">
             <div className="flex flex-row items-center">
               <img
                 style={{
                   WebkitFilter: "drop-shadow(.5px 1px 1px #555)",
                   filter: "drop-shadow(.5px 1px 1px #555)",
                 }}
-                className="md:max-w-[35vw] max-w-[80vw] rounded flex-initial"
+                className="rounded flex-initial"
                 src={"https:" + props.imageSrc}
                 alt="Device mockup"
               />
