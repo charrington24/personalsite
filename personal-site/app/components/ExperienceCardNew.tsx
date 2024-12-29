@@ -1,8 +1,5 @@
 import { moderatRegular } from "../fonts/fonts";
-import Image, { StaticImageData } from "next/image";
-import Tag from "./Tag";
-// import { useNavigate } from 'react-router-dom';
-import { useRouter } from "next/router";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 
 export interface IExperienceCardNewProps {
@@ -13,6 +10,8 @@ export interface IExperienceCardNewProps {
   tags: string[];
   id: string;
 }
+
+
 export const ExperienceCardNew = ({
   ...props
 }: IExperienceCardNewProps): JSX.Element => {
@@ -20,24 +19,30 @@ export const ExperienceCardNew = ({
     <Link
       key={props.id}
       href={`/project/${props.id}`}
-      className="bg-[#F3F0E9] hover:scale-[105%] py-2 sm:py-4 gap-[10px] max-w-[100vw] lg:max-w-[48%] md:max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col rounded-[10px] border-[#581845]  border border-solid"
+      className=" group h-min max-w-[100vw] lg:max-w-[48%] md:max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col relative"
     >
+      
       <div
-        className={`border-[#581845] border-b border-solid text-[#581845] px-2 sm:px-4 pb-2 sm:pb-4 flex-initial h-min text-3xl lg:text-5xl text-left w-full ${moderatRegular.className}`}
+        className={`absolute justify-center items-center flex w-[100%] h-[100%] text-7xl md:text-8xl lg:text-7xl xl:text-8xl min-[1600px]:text-9xl font-bold ${moderatRegular.className} opacity-0 group-hover:opacity-100 transition duration-300 group-hover:bg-gradient-to-r from-[#A36CA3]/[.5] to-[#4A214A]/[.5] border-[#581845] border border-solid rounded-[10px]`}
       >
-        {props.title}
+        <div className={'flex flex-initial max-w-[90%] overflow-ellipses'}>
+          <div className={'text-white'}>
+            {props.title}
+          </div>
+        </div>
       </div>
 
       {props.imageSrc && (
-        <div className="px-2 sm:px-4 border-[#581845] border-b border-solid">
-          <div className="flex flex-wrap m-2 justify-center items-center">
-            <div className="flex flex-row items-center">
+        <div className="">
+          <div className="flex flex-wrap justify-center items-center transition-opacity duration-300 ">
+            <div className="flex flex-row items-center"
+              // style={{backgroundImage: "https:" + props.imageSrc}}
+            >
               <img
                 style={{
-                  WebkitFilter: "drop-shadow(.5px 1px 1px #555)",
-                  filter: "drop-shadow(.5px 1px 1px #555)",
+       
                 }}
-                className="rounded flex-initial"
+                className="border-[#581845] border border-solid shadow-lg rounded-[10px] flex-initial"
                 src={"https:" + props.imageSrc}
                 alt="Device mockup"
               />
@@ -45,21 +50,6 @@ export const ExperienceCardNew = ({
           </div>
         </div>
       )}
-
-      {/* {props.projectPage && ( */}
-      <div className="px-2 sm:px-4">
-        <div className="flex flex-col gap-[10px]">
-          <div className="flex flex-wrap gap-[5px]">
-            {props.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
-          <div className="flex flex-wrap md:text-3xl text-xl md:w-max-[900px] text-wrap box-border w-fit">
-            {props.description}
-          </div>
-        </div>
-      </div>
-      {/* )} */}
     </Link>
   );
 };

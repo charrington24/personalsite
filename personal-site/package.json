@@ -27,6 +27,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.28.0",
+    "react-slideshow-image": "^4.3.2",
     "react-ts-typewriter": "^0.1.8-b",
     "responsive-loader": "^3.1.2",
     "svg-sprite-loader": "^2.0.3",

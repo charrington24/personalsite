@@ -50,7 +50,7 @@ const Page = () => {
                 <h1 className="font-bold sm:text-2xl text-lg text-[#58184585] my-2">
                   RECENT WORK
                 </h1>
-                <ProjectList numProjects={3}/>
+                <ProjectList numProjects={4}/>
               </div>
             </div>
           </main>

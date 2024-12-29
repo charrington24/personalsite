@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'responsive': 'clamp(0.75rem, 2vw, 3rem)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -28,3 +31,4 @@ module.exports = {
   },
   plugins: [],
 }
+

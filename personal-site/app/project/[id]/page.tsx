@@ -1,8 +1,11 @@
+
 import Tag from "@/app/components/Tag";
 import { moderatRegular } from "@/app/fonts/fonts";
 import { client } from "@/app/layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { notFound } from "next/navigation";
+import React from "react";
+import { Slide } from "react-slideshow-image";
 
 type Project = {
   title: string;
@@ -22,6 +25,22 @@ type Project = {
       };
     };
   };
+  solutionImage: {
+    fields: {
+      file: {
+        url: string;
+      };
+    };
+  };
+  solutionImages: [
+    {
+      fields: {
+        file: {
+          url: string;
+        };
+      };
+    }
+  ];
 };
 
 async function fetchProject(id: string): Promise<Project | null> {
@@ -49,6 +68,8 @@ async function fetchProject(id: string): Promise<Project | null> {
       role: item.role,
       context: item.context,
       thumbnail: item.thumbnail as any,
+      solutionImage: item.solutionImage as any,
+      solutionImages: item.solutionImagesPlural as any,
     };
 
     // console.log(toReturn);
@@ -58,6 +79,10 @@ async function fetchProject(id: string): Promise<Project | null> {
     return null;
   }
 }
+
+
+ 
+
 
 export default async function ProjectPage({
   params,
@@ -113,18 +138,17 @@ export default async function ProjectPage({
           </div>
           <div className="mt-4 ">
             <h2 className="text-2xl font-semibold">Solution</h2>
-            {project.thumbnail && (
-              <div className="flex justify-center items-center">
-                <img
-                  style={{
-                    WebkitFilter: "drop-shadow(.5px 1px 1px #555)",
-                    filter: "drop-shadow(.5px 1px 1px #555)",
-                  }}
-                  className="md:max-w-[60vw] max-w-[90vw] w-full rounded justify-center items-center flex-initial my-4"
-                  src={"https:" + project.thumbnail.fields.file.url}
-                  alt="Device mockup"
-                />
-              </div>
+            {project.solutionImage && (
+              <>
+                <div className="flex justify-center items-center">
+                  <img
+                    style={{}}
+                    className="w-[100vw] justify-center items-center flex-initial my-4"
+                    src={"https:" + project.solutionImage.fields.file.url}
+                    alt="Device mockup"
+                  />
+                </div>
+              </>
             )}
             <div>{documentToReactComponents(project?.solution)}</div>
           </div>
