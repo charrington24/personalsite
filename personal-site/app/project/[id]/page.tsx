@@ -96,21 +96,21 @@ export default async function ProjectPage({
   }
 
   return (
-    <div className="justify-center items-center flex flex-col md:py-40 md:px-10 lg:px-40 px-4 py-10 mt-16 prose mx-auto p-6">
+    <div className="">
       {/* <h1 className="w-full font-bold sm:text-xl text-lg text-[#58184585]">
         PROJECT
       </h1> */}
       {project && (
-        <div className="sm:text-xl text-lg">
+        <div className="sm:text-3xl text-lg leading-relaxed">
           <div className="flex flex-wrap justify-between items-center gap-[10px]">
-            <h1 className="flex text-5xl w-fit">{project?.title}</h1>
+            <h1 className="flex text-5xl md:text-8xl w-fit">{project?.title}</h1>
             <div className="flex flex-wrap gap-[5px] w-fit">
               {project.stack.map((tag: any) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </div>
           </div>
-          <div className="my-[10px] sm:text-xl tetx-lg">
+          <div className="leading-relaxed my-[10px]">
             {project?.overview}
           </div>
           {/* <div className="flex flex-wrap gap-[10px]">
@@ -132,12 +132,12 @@ export default async function ProjectPage({
             </div>
           </div> */}
 
-          <div className="mt-4">
-            <h2 className="text-2xl font-semibold">Problem</h2>
-            <div>{documentToReactComponents(project?.problem)}</div>
+          <div className="my-4 mt-8">
+            <h2 className="md:text-5xl text-3xl my-2 mb-4">Problem:</h2>
+            <div className="leading-relaxed">{documentToReactComponents(project?.problem)}</div>
           </div>
-          <div className="mt-4 ">
-            <h2 className="text-2xl font-semibold">Solution</h2>
+          <div className="my-4 mt-8">
+            <h2 className="md:text-5xl text-3xl my-2 mb-4">Solution:</h2>
             {project.solutionImage && (
               <>
                 <div className="flex justify-center items-center">
@@ -150,23 +150,23 @@ export default async function ProjectPage({
                 </div>
               </>
             )}
-            <div>{documentToReactComponents(project?.solution)}</div>
+            <div className=" leading-relaxed">{documentToReactComponents(project?.solution)}</div>
           </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-semibold">Technical Approach</h2>
-            <div>{documentToReactComponents(project?.technicalApproach)}</div>
+          <div className="mt-8 my-4">
+            <h2 className="md:text-5xl text-3xl my-2 mb-4">Technical Approach</h2>
+            <div className="leading-relaxed">{documentToReactComponents(project?.technicalApproach)}</div>
           </div>
-          <div className="mt-4 rounded-[10px] border-[#581845]  border border-solid">
-            <h2 className="text-2xl font-semibold px-2 py-1 border-[#581845] border-b border-solid">
+          <div className="my-4 mt-8 rounded-[10px] border-[#581845]  border border-solid">
+            <h2 className="md:text-5xl text-3xl my-4 px-2 pb-4 py-1 border-[#581845] border-b border-solid">
               My Contributions
             </h2>
-            <div className="px-2 py-1">
+            <div className="px-2 py-1 leading-relaxed">
               {documentToReactComponents(project?.contributions)}
             </div>
           </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-semibold">Impact</h2>
-            <div>{documentToReactComponents(project?.impact)}</div>
+          <div className="mt-8 my-4 ">
+            <h2 className="md:text-5xl text-3xl my-2 mb-4">Impact</h2>
+            <div className="leading-relaxed">{documentToReactComponents(project?.impact)}</div>
           </div>
         </div>
       )}

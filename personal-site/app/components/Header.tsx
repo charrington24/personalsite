@@ -41,28 +41,28 @@ const Header: React.FC = () => {
     <header
       className={
         !isOpen
-          ? `z-50 fixed  duration-500 ease-in-out top-0 md:px-10 lg:px-40 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
-          : `bg-[#F3F0E9] border-b border-b-[#581845] z-50 fixed top-0 md:px-10 lg:px-40 px-4 p-6 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
+          ? `z-50 fixed  duration-500 ease-in-out top-0 md:py-6 md:px-10 lg:px-10 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
+          : `bg-[#F3F0E9] border-b border-b-[#581845] z-50 fixed top-0 md:px-10 lg:px-10 px-4 p-6 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
       }
     >
       <div className="flex justify-between items-center">
         <a href="/" className={
           !isOpen ?
-          `text-[#581845] text-lg font-bold md:ml-[0px] ml-[35vw]`
+          `text-[#581845] text-lg font-bold md:ml-[0px] `
           : `hidden`
           }>
           <Image
             src={logo}
             style={{
-              WebkitFilter: "drop-shadow(.5px 1px 1.5px #555)",
-              filter: "drop-shadow(.25px 1px 2px #555)",
+              // WebkitFilter: "drop-shadow(.5px 1px 1.5px #555)",
+              // filter: "drop-shadow(.25px 1px 2px #555)",
             }}
-            className="hover:scale-[105%] duration-300 ease-in-out md:w-[140px] w-[75px] mt-[10px]"
+            className="hover:scale-[105%] duration-300 ease-in-out md:w-[140px] w-[65px] mt-[10px]"
             // width={150}
             alt={"Pixel art portrait of Charlotte"}
           />
         </a>
-        <div className="flex gap-6 w-auto h-full items-center">
+        <div className=" hidden flex gap-6 w-auto h-full items-center">
           <div className="max-md:hidden flex gap-4">
             {links.map(({ href, label }) => (
               <a
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className={`md:hidden flex flex-col items-end gap-4`}>
+        <div className={`hidden md:hidden flex flex-col items-end gap-4`}>
           <button
             onClick={toggleMenu}
             className={`md:hidden flex justify-end w-14 z-[50]`}

@@ -63,6 +63,15 @@ body {
 /* background-color: black; */
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
 .netscape {
   -webkit-backdrop-filter: blur(4.64px) brightness(100%);
   backdrop-filter: blur(4.64px) brightness(100%);

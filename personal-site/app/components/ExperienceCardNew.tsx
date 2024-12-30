@@ -19,11 +19,10 @@ export const ExperienceCardNew = ({
     <Link
       key={props.id}
       href={`/project/${props.id}`}
-      className=" group h-min max-w-[100vw] lg:max-w-[48%] md:max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col relative"
+      className="snap-start md:scroll-ml-52 scroll-ml-2 box-border mr-4 group max-w-[85vw] lg:max-w-[100%] md:max-w-[100vw] duration-500 ease-in-out cursor-pointer flex flex-col relative"
     >
-      
       <div
-        className={`absolute justify-center items-center flex w-[100%] h-[100%] text-7xl md:text-8xl lg:text-7xl xl:text-8xl min-[1600px]:text-9xl font-bold ${moderatRegular.className} opacity-0 group-hover:opacity-100 transition duration-300 group-hover:bg-gradient-to-r from-[#A36CA3]/[.5] to-[#4A214A]/[.5] border-[#581845] border border-solid rounded-[10px]`}
+        className={`absolute justify-center items-center box-border flex w-[100%] h-[100%] text-7xl md:text-8xl lg:text-7xl xl:text-8xl min-[1600px]:text-9xl font-semibold opacity-0 group-hover:opacity-100 transition duration-300 group-hover:bg-gradient-to-r from-[#A36CA3]/[.5] to-[#4A214A]/[.5] border-[#581845] border border-solid rounded-2xl`}
       >
         <div className={'flex flex-initial max-w-[90%] overflow-ellipses'}>
           <div className={'text-white'}>
@@ -42,7 +41,7 @@ export const ExperienceCardNew = ({
                 style={{
        
                 }}
-                className="border-[#581845] border border-solid shadow-lg rounded-[10px] flex-initial"
+                className="border-[#581845] border border-solid shadow-lg rounded-2xl md:max-h-[50vh] flex-initial"
                 src={"https:" + props.imageSrc}
                 alt="Device mockup"
               />

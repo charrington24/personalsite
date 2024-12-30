@@ -30,7 +30,7 @@ export default async function ProjectList({ numProjects }: Props) {
   try {
     const response = await client.getEntries({
       content_type: "project",
-      order: ["-fields.start"],
+      order: ["-fields.end"],
       limit: numProjects,
       select: [
         "fields.title",
@@ -58,7 +58,8 @@ export default async function ProjectList({ numProjects }: Props) {
   //   console.log(projects)
 
   return (
-    <div className={`flex flex-wrap gap-[10px] h-max-[500px]`}>
+    <div className={"relative pl-2 -ml-2 md:-ml-52 md:pl-52 w-[100vw] overflow-x-scroll snap-x snap-mandatory scroll-smooth no-scrollbar"}>
+    <div className={`w-[500vw] flex flex-row`}>
       {projects?.map((p: Project) => {
         return (
           <ExperienceCardNew
@@ -72,6 +73,7 @@ export default async function ProjectList({ numProjects }: Props) {
           />
         );
       })}
+    </div>
     </div>
   );
 }
