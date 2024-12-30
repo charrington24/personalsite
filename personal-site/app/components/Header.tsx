@@ -7,6 +7,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Image, { StaticImageData } from "next/image";
 import logo from "../../public/large_logo.png";
+import { GitHub, LinkedIn, Headset } from "@mui/icons-material";
+
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,22 +50,56 @@ const Header: React.FC = () => {
       }
     >
       <div className="flex justify-between items-center">
-        <a href="/" className={
-          !isOpen ?
-          `text-[#581845] text-lg font-bold md:ml-[0px] `
-          : `hidden`
-          }>
-          <Image
-            src={logo}
-            style={{
-              // WebkitFilter: "drop-shadow(.5px 1px 1.5px #555)",
-              // filter: "drop-shadow(.25px 1px 2px #555)",
-            }}
-            className="hover:scale-[105%] duration-300 ease-in-out md:w-[140px] w-[65px] mt-[10px]"
-            // width={150}
-            alt={"Pixel art portrait of Charlotte"}
-          />
-        </a>
+        <div className={"group"}>
+          <Link
+            href="/"
+            className={
+              "group relative" + !isOpen
+                ? `text-[#581845] text-lg font-bold md:ml-[0px] `
+                : `hidden`
+            }
+          >
+            <Image
+              src={logo}
+              style={
+                {
+                  // WebkitFilter: "drop-shadow(.5px 1px 1.5px #555)",
+                  // filter: "drop-shadow(.25px 1px 2px #555)",
+                }
+              }
+              className="hover:scale-[105%] duration-300 ease-in-out md:w-[140px] w-[65px] mt-[10px]"
+              // width={150}
+              alt={"Pixel art portrait of Charlotte"}
+            />
+            
+          </Link>
+          <div className="flex flex-col w-[100%] justify-center items-center">
+              <div className="flex flex-col my-8 w-min gap-[16px] transition-all duration-300 collapse ">
+                <a
+                  className=""
+                  href="https://github.com/charrington24"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GitHub style={{ fontSize: "80px" }} htmlColor="#581845" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/c-harrington-2024/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedIn style={{ fontSize: "80px" }} htmlColor="#581845" />
+                </a>
+                <a
+                  href="https://open.spotify.com/user/cfh874033?si=39b1f0973536422f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Headset style={{ fontSize: "80px" }} htmlColor="#581845" />
+                </a>
+              </div>
+            </div>
+        </div>
         <div className=" hidden flex gap-6 w-auto h-full items-center">
           <div className="max-md:hidden flex gap-4">
             {links.map(({ href, label }) => (

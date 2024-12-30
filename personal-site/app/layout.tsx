@@ -31,7 +31,7 @@ export default function RootLayout({
           <div className={`flex flex-col`}>
             <div className={`justify-center items-center`}>
               <main className="flex-1">
-                <div className="mt-16 lg:mt-10 lex flex-wrap md:py-10 py-10 px-2 lg:pl-52 md:pl-52 md:pr-10 lg:pr-10 lg:pr-[15%] xl:pr-[10%]">
+                <div className="mt-16 lg:mt-10 lex flex-wrap md:py-10 py-10 px-2 lg:pl-52 md:pl-52 md:pr-10 lg:pr-10 lg:pr-[15%] xl:pr-[30%]">
                   {children}
                 </div>
               </main>
