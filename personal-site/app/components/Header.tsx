@@ -73,7 +73,7 @@ const Header: React.FC = () => {
             />
             
           </Link>
-          <div className="flex flex-col w-[100%] justify-center items-center">
+          {/* <div className="flex flex-col w-[100%] justify-center items-center">
               <div className="flex flex-col my-8 w-min gap-[16px] transition-all duration-300 collapse ">
                 <a
                   className=""
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
                   <Headset style={{ fontSize: "80px" }} htmlColor="#581845" />
                 </a>
               </div>
-            </div>
+            </div> */}
         </div>
         <div className=" hidden flex gap-6 w-auto h-full items-center">
           <div className="max-md:hidden flex gap-4">
