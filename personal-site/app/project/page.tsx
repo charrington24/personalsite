@@ -1,28 +1,7 @@
-import { moderatRegular } from "../fonts/fonts";
-import bitjockey from "../../public/bitjockey_both.webp";
+
 import ProjectList from "../components/ProjectList";
 
 const Page = () => {
-  const project = {
-    title: "Bitjockey",
-    startDate: "June 2023",
-    endDate: "Ongoing",
-    description: "",
-    role: "",
-    context: "",
-    team: [],
-    contributions: "",
-    stack: [],
-    heroImage: bitjockey,
-  };
-  // {
-  //   title: "Coursicle Chat",
-  //   img: coursicle,
-  // },
-  // {
-  //   title: "KANM Website",
-  //   img: kanm,
-  // },
 
   return (
     <div className="flex flex-wrap">

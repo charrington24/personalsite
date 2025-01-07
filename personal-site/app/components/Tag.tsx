@@ -9,7 +9,7 @@ export default function Tag({
   }) {
 return (
     <span
-        className={`${spaceMono.className} flex md:text-2xl text-lg ease-in-out h-min text-left leading-tight flex-initial rounded-[10px] border-[#581845]  border border-solid py-[.1px] pl-[7px] pr-[9px]`}
+        className={`${spaceMono.className} flex md:text-2xl text-lg ease-in-out h-min text-left leading-tight flex-initial rounded-[10px] border-[#581845]  border border-solid py-[1px] px-[10px]`}
     >
         {children}
     </span>)};

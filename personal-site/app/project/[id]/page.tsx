@@ -1,8 +1,8 @@
-
 import Tag from "@/app/components/Tag";
-import { moderatRegular } from "@/app/fonts/fonts";
+import { moderatRegular, spaceMono } from "@/app/fonts/fonts";
 import { client } from "@/app/layout";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import { Slide } from "react-slideshow-image";
@@ -18,6 +18,7 @@ type Project = {
   stack: any;
   role: any;
   context: any;
+  link: any;
   thumbnail: {
     fields: {
       file: {
@@ -67,6 +68,7 @@ async function fetchProject(id: string): Promise<Project | null> {
       stack: item.stack,
       role: item.role,
       context: item.context,
+      link: item.link,
       thumbnail: item.thumbnail as any,
       solutionImage: item.solutionImage as any,
       solutionImages: item.solutionImagesPlural as any,
@@ -79,10 +81,6 @@ async function fetchProject(id: string): Promise<Project | null> {
     return null;
   }
 }
-
-
- 
-
 
 export default async function ProjectPage({
   params,
@@ -101,18 +99,30 @@ export default async function ProjectPage({
         PROJECT
       </h1> */}
       {project && (
-        <div className="sm:text-3xl text-lg leading-relaxed">
+        <div className="sm:text-2xl text-lg leading-relaxed">
           <div className="flex flex-wrap justify-between items-center gap-[10px]">
-            <h1 className="flex text-5xl md:text-8xl w-fit">{project?.title}</h1>
+            <div className="flex flex-wrap items-center w-[100%] my-[10px] gap-[20px]">
+              <h1 className="flex text-5xl md:text-8xl w-fit">
+                {project?.title}
+              </h1>
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className={`${spaceMono.className} bg-gradient-to-r from-[#A36CA3]/[.25] to-[#4A214A]/[.25] hover:scale-[105%] ease-in-out flex md:text-3xl text-xl ease-in-out w-fit h-min text-left leading-tight flex-initial rounded-[10px] border-[#581845] border border-solid mt-[5px] md:mt-[10px] py-[1px] px-[10px]`}
+                >
+                  {" "}
+                  Live Site{" "}
+                </Link>
+              )}
+            </div>
             <div className="flex flex-wrap gap-[5px] w-fit">
               {project.stack.map((tag: any) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </div>
           </div>
-          <div className="leading-relaxed my-[10px]">
-            {project?.overview}
-          </div>
+          <div className="leading-relaxed my-[10px]">{project?.overview}</div>
           {/* <div className="flex flex-wrap gap-[10px]">
             <div className="rounded-[10px] border-[#581845]  border border-solid">
               <div
@@ -134,7 +144,9 @@ export default async function ProjectPage({
 
           <div className="my-4 mt-8">
             <h2 className="md:text-5xl text-3xl my-2 mb-4">Problem:</h2>
-            <div className="leading-relaxed">{documentToReactComponents(project?.problem)}</div>
+            <div className="leading-relaxed">
+              {documentToReactComponents(project?.problem)}
+            </div>
           </div>
           <div className="my-4 mt-8">
             <h2 className="md:text-5xl text-3xl my-2 mb-4">Solution:</h2>
@@ -150,11 +162,17 @@ export default async function ProjectPage({
                 </div>
               </>
             )}
-            <div className=" leading-relaxed">{documentToReactComponents(project?.solution)}</div>
+            <div className=" leading-relaxed">
+              {documentToReactComponents(project?.solution)}
+            </div>
           </div>
           <div className="mt-8 my-4">
-            <h2 className="md:text-5xl text-3xl my-2 mb-4">Technical Approach</h2>
-            <div className="leading-relaxed">{documentToReactComponents(project?.technicalApproach)}</div>
+            <h2 className="md:text-5xl text-3xl my-2 mb-4">
+              Technical Approach
+            </h2>
+            <div className="leading-relaxed">
+              {documentToReactComponents(project?.technicalApproach)}
+            </div>
           </div>
           <div className="my-4 mt-8 rounded-[10px] border-[#581845]  border border-solid">
             <h2 className="md:text-5xl text-3xl my-4 px-2 pb-4 py-1 border-[#581845] border-b border-solid">
@@ -166,7 +184,9 @@ export default async function ProjectPage({
           </div>
           <div className="mt-8 my-4 ">
             <h2 className="md:text-5xl text-3xl my-2 mb-4">Impact</h2>
-            <div className="leading-relaxed">{documentToReactComponents(project?.impact)}</div>
+            <div className="leading-relaxed">
+              {documentToReactComponents(project?.impact)}
+            </div>
           </div>
         </div>
       )}

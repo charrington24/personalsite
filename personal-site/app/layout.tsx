@@ -5,6 +5,7 @@ import { moderatRegular } from "./fonts/fonts";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import { createClient } from "contentful";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
               <main className="flex-1">
                 <div className="mt-16 lg:mt-10 lex flex-wrap md:py-10 py-10 px-2 lg:pl-52 md:pl-52 md:pr-10 lg:pr-10 lg:pr-[15%] xl:pr-[30%]">
                   {children}
+                  <Analytics />
                 </div>
               </main>
             </div>

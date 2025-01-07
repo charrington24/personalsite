@@ -17,7 +17,7 @@ const Page = () => {
           <div className="sm:mx-[0px] ">hi! i&apos;m charlotte :)</div>
         </div>
         <div className="flex-wrap my-2 sm:my-4 md:my-6">
-          <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
+          <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl leading-tight">
             i&apos;m a new grad full-stack developer building <i>efficient</i>,{" "}
             <i>beautiful</i>, and <i>useful</i> products for an innovating
             world.
@@ -27,13 +27,13 @@ const Page = () => {
       </section>
       <div className="">
         <h1 className="lg:mt-16 md:mt-10 mt-4 md:my-4">a little about me:</h1>
-        <div className="my-2 sm:my-4 md:my-6 flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
+        <div className="my-2 sm:my-4 md:my-6 flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl leading-tight">
           &#x1F393; just graduated from Texas A&M with a BS in{" "}
           <b>Computer Science</b> + minor in <b>Cybersecurity</b> + emphasis on{" "}
           <b>Chinese language</b> (dec &apos;24)
           <br />
         </div>
-        <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl  leading-tight">
+        <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl  leading-tight">
           &#x1F4BB; 3 years of internship + volunteer experience in database
           management, ui/ux design, and full-stack development. <br />
         </div>
@@ -46,12 +46,12 @@ const Page = () => {
       </div>
       <div className="">
         <h1 className="lg:mt-16 md:mt-10 mt-4 md:my-4">what&apos;s cooking:</h1>
-        <div className="my-2 sm:my-4 md:my-6 flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight">
+        <div className="my-2 sm:my-4 md:my-6 flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl leading-tight">
           &#x270D; turning this site into a blog (it already pulls my projects
           from contentful, i just have to write some posts...)
           <br />
         </div>
-        <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl  leading-tight">
+        <div className="flex-initial transition ease-in-out text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl  leading-tight">
           &#x1F004; retooling{" "}
           <Link key="6cPaoCaaqtd99QG0qAe46E" href={`/project/6cPaoCaaqtd99QG0qAe46E`} className={'hover:font-bold '}>
             zenji

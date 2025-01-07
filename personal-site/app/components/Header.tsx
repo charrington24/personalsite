@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     <header
       className={
         !isOpen
-          ? `z-50 fixed  duration-500 ease-in-out top-0 md:py-6 md:px-10 lg:px-10 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
+          ? `z-50 fixed  duration-500 ease-in-out top-0 md:py-6 md:px-10 lg:px-10 px-4 h-auto text-center font-bold text-xl text-[#58184585] w-fit ${moderatRegular.className}`
           : `bg-[#F3F0E9] border-b border-b-[#581845] z-50 fixed top-0 md:px-10 lg:px-10 px-4 p-6 h-auto text-center font-bold text-xl text-[#58184585] w-full ${moderatRegular.className}`
       }
     >
